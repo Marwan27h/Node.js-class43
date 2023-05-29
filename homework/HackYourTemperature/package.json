@@ -1,21 +1,20 @@
 {
-  "name": "homework",
+  "name": "HackYourTemperature",
   "version": "1.0.0",
   "description": "",
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "jest": "^29.5.0"
-  },
   "dependencies": {
     "express": "^4.18.2",
     "express-handlebars": "^7.0.7",
-    "node-fetch": "^3.3.1"
+    "node-fetch": "^3.3.1",
+    "nodemon": "^2.0.22"
   }
 }
