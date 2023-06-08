@@ -4,8 +4,8 @@ import keys from "./sources/keys.js"
 
 const app = express()
 
-app.use(express.json())
-
+app.use(express.json()) // middleware is used to parse JSON data in the request body
+//app.post() method is used to define a route handler for HTTP POST requests
 app.post("/weather", async (req, res) => {
     try {
         const cityName = req.body.cityName
@@ -21,7 +21,7 @@ app.post("/weather", async (req, res) => {
         const data = await response.json()
 
         if (data.cod === "404") {
-            return res.status(404).json({ weatherText: "City is not found!" })
+            return res.status(404).json({ weatherText: "City is not found!" }) 
         }
 
         const temperature = data.main.temp
@@ -30,7 +30,7 @@ app.post("/weather", async (req, res) => {
         return res.json({ weatherText })
     } catch (err) {
         console.error("Error:", err)
-        return res.status(500).json({ error: err.message })
+       return res.status(500).json({ error: err.message })
     }
 })
 
